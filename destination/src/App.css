@@ -64,17 +64,17 @@
 }
 
 .countdown-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
-  margin: 0 0 40px;
+  margin: 0 0 36px;
   background: linear-gradient(135deg, #c084fc, #60a5fa, #22d3ee);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   @media (max-width: 640px) {
-    font-size: 22px;
-    margin-bottom: 28px;
+    font-size: 19px;
+    margin-bottom: 24px;
   }
 }
 
