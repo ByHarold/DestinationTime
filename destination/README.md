@@ -41,6 +41,10 @@ npm run preview
 | `VITE_COUNTDOWN_DATE` | `2026-12-18T00:00:00+08:00` | ISO 8601 目标时间（含时区） |
 | `VITE_COUNTDOWN_TITLE` | `倒计时` | 浏览器标签页标题 |
 
+## Node.js 版本
+
+项目需要 Node.js 18+。根目录 `.node-version` 指定了 Vercel 使用的版本。
+
 ## Vercel 部署
 
 ### 仓库结构注意
@@ -50,6 +54,7 @@ npm run preview
 ```
 DestinationTime/
 ├── vercel.json          ← Vercel 配置（仓库根目录）
+├── .node-version        ← Node 版本（20）
 ├── destination/         ← 项目源码
 │   ├── package.json
 │   ├── src/
@@ -63,11 +68,12 @@ DestinationTime/
 - 打开 [vercel.com](https://vercel.com) → **Add New Project**
 - 导入 GitHub 仓库 `ByHarold/DestinationTime`
 
-**2. 设置 Root Directory**
+**2. 设置 Root Directory（必须）**
 
 - 项目 Dashboard → **Settings → General**
 - 找到 **Root Directory**，填入 `destination`
 - 点击 **Save**
+- 不设置此项会导致部署失败（`ENOENT package.json`）
 
 **3. 设置环境变量**
 
@@ -79,6 +85,8 @@ DestinationTime/
 | `VITE_COUNTDOWN_NAME` | `2026年12月18日` |
 | `VITE_COUNTDOWN_DATE` | `2026-12-18T00:00:00+08:00` |
 | `VITE_COUNTDOWN_TITLE` | `倒计时 - 2026年12月18日` |
+
+> 也可在仓库中创建 `.env` 文件，构建时自动读取。
 
 **4. 配置域名（可选）**
 
@@ -108,10 +116,11 @@ DestinationTime/
 
 ## 功能
 
-- 倒计时到指定目标日期
-- 到达后自动切换为正计时
-- 实时显示当前时间
-- 今日剩余小时/分钟
-- 基于 IP 的天气与温度显示（Open-Meteo API）
-- 深色主题
-- 响应式布局
+- **倒计时**：到指定目标日期（环境变量控制），每秒更新
+- **正计时**：到达目标后自动切换为已过时间
+- **今日剩余**：显示当天还剩多少小时/分钟
+- **当前时间**：实时显示当前日期与时间
+- **天气显示**：基于 IP 定位自动获取当地天气与体感温度（Open-Meteo API，无需 Key）
+- **时间感知背景**：根据时段（早晨/中午/下午/晚上）自动切换背景色与强调色
+- **响应式布局**：适配桌面端与移动端
+- **深色主题**：全局深色配色
