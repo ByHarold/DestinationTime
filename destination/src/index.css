@@ -1,7 +1,6 @@
 :root {
   --text: #9ca3af;
   --text-h: #f3f4f6;
-  --bg: linear-gradient(135deg, #1a1035 0%, #1e1550 25%, #0f2b4a 55%, #0d3328 100%);
   --border: #2e303a;
   --code-bg: #1f2028;
   --accent: #c084fc;
@@ -31,6 +30,34 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+}
+
+.period-morning {
+  --bg: linear-gradient(135deg, #2d1b00 0%, #4a2800 25%, #1a3a4a 60%, #0d3328 100%);
+  --accent: #fb923c;
+  --clock-color: #fb923c;
+  --accent-bg: rgba(251, 146, 60, 0.15);
+}
+
+.period-noon {
+  --bg: linear-gradient(135deg, #1a3a5c 0%, #1e5080 25%, #2a6a5a 55%, #1a4a3a 100%);
+  --accent: #60a5fa;
+  --clock-color: #60a5fa;
+  --accent-bg: rgba(96, 165, 250, 0.15);
+}
+
+.period-afternoon {
+  --bg: linear-gradient(135deg, #3a1a00 0%, #5a2d00 25%, #2a1a3a 55%, #1a2a3a 100%);
+  --accent: #f59e0b;
+  --clock-color: #f59e0b;
+  --accent-bg: rgba(245, 158, 11, 0.15);
+}
+
+.period-night {
+  --bg: linear-gradient(135deg, #0f0a1a 0%, #14102e 25%, #0a1a2e 55%, #0a1f1a 100%);
+  --accent: #c084fc;
+  --clock-color: #a78bfa;
+  --accent-bg: rgba(192, 132, 252, 0.15);
 }
 
 #root {

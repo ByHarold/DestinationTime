@@ -42,12 +42,15 @@ export function Countdown() {
 
   const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`
 
+  const hour = now.getHours()
+  const period = hour < 6 ? 'night' : hour < 12 ? 'morning' : hour < 14 ? 'noon' : hour < 18 ? 'afternoon' : 'night'
+
   useEffect(() => {
     document.title = TAB_TITLE
   }, [])
 
   return (
-    <div className="countdown-wrapper">
+    <div className={`countdown-wrapper period-${period}`}>
       <Card
         title=""
         bordered={false}
