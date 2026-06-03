@@ -176,6 +176,33 @@
   }
 }
 
+.countdown-today {
+  margin-top: 40px;
+  font-size: 15px;
+  color: var(--text);
+  letter-spacing: 0.3px;
+
+  strong {
+    font-size: 22px;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--mono);
+  }
+
+  strong:first-of-type {
+    background: linear-gradient(135deg, #a78bfa, #60a5fa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  strong:last-of-type {
+    background: linear-gradient(135deg, #60a5fa, #22d3ee);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 .countdown-hint {
   margin-top: 32px;
   font-size: 15px;
