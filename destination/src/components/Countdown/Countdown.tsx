@@ -49,8 +49,12 @@ export function Countdown() {
     document.title = TAB_TITLE
   }, [])
 
+  useEffect(() => {
+    document.documentElement.dataset.period = period
+  }, [period])
+
   return (
-    <div className={`countdown-wrapper period-${period}`}>
+    <div className="countdown-wrapper">
       <Card
         title=""
         bordered={false}
